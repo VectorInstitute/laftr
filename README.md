@@ -30,7 +30,7 @@ The bash script first trains LAFTR and then evaluates by training a naive classi
 See the paper for further details.
 
 ## running a sweep of fair classification with various hyperparameter values
-``
+```
 python src/generate_sweep.py sweeps/small_sweep_adult/sweep.json
 source sweeps/small_sweep_adult/command.sh
 ```
