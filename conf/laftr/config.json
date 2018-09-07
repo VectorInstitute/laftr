@@ -1,0 +1,32 @@
+{
+    "exp_name": "laftr_default",
+    "dirs": { {% include 'dirs/%s.json' % dirs %} },
+    "model": {
+        {% include 'model/%s.json' % data %},
+        "class": "WeightedDemParWassGan",
+        "seed": 0,
+        "recon_coeff": 0.0,
+        "class_coeff": 1.0,
+        "fair_coeff": 1.0,
+        "adim": 1,
+        "ydim": 1,
+        "hinge": 0.0,
+        "gp": 10.0
+    },
+    "data": {
+        {% include 'data/%s.json' % data %},    
+        "seed": 2,
+        "y2i": null
+    },
+    "train": {
+        "batch_size": 64,
+        "regbas": false,
+        "aud_steps": 1,
+        "n_epochs": 1000,
+        "patience": 1000
+    },
+    "optim": {
+        "learning_rate": 0.001
+    }
+}
+

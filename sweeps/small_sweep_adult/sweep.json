@@ -1,0 +1,25 @@
+{
+    "sweep_name": "small_sweep_adult",
+    "script": ["src/run_laftr.py", "src/run_unf_clf.py"],
+    "config": "sweeps/small_sweep_adult/config.json",
+    "n_proc": 8,
+    "xargs": false,
+    "exclude_guppies": "guppy9,guppy10,guppy18,guppy25,guppy13,guppy22 ",
+    "partition": "gpuc",
+    "templates": {
+        "data": ["adult"],
+        "dirs": "local"
+    },
+    "overrides": {
+        "model": {
+            "fair_coeff": [0.1, 0.2, 0.3],
+            "class": ["WeightedDemParWassGan", "WeightedEqoddsWassGan", "WeightedEqoppWassGan", "DemParGan"]
+        },
+        "transfer": {
+            "epoch_number": [0],
+            "repr_phase": ["Test", "Valid"],
+           "model_seed": [1,2,3]
+        }
+    }
+}
+

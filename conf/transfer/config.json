@@ -1,0 +1,36 @@
+{
+    "exp_name": "default/trasfer_default",
+    "dirs": { {% include 'dirs/%s.json' % dirs %} },
+    "model": {
+        {% include 'model/%s.json' % data %},
+        "seed": 0,
+        "adim": 1,
+        "ydim": 1
+    },
+    "data": {
+        {% include 'data/%s.json' % data %},    
+        "seed": 2
+    },
+    "train": {
+        "batch_size": 64,
+        "regbas": false,
+        "aud_steps": 1,
+        "n_epochs": 1000,
+        "patience": 1000
+    },
+    "transfer": {
+        "batch_size": 64,
+        "regbas": false,
+        "n_epochs": 1000,
+        "patience": 20,
+        "y_indices": [-1],
+        "epoch_number": null,
+        "anneal_length": 0,
+        "repr_name": "override_me",
+        "repr_phase": "Test"
+    },
+    "optim": {
+        "learning_rate": 0.001
+    }
+}
+

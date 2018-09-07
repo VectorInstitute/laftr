@@ -1,0 +1,2 @@
+python src/run_laftr.py conf/transfer/laftr_then_naive.json -o exp_name="laftr_example/laftr",train.n_epochs=3 --data adult --dirs local  # train a LAFTR model on the Adult dataset for 3 epochs
+python src/run_unf_clf.py conf/transfer/laftr_then_naive.json -o exp_name="laftr_example/laftr/transfer_to_naive_clf",train.n_epochs=3,transfer.n_epochs=10 --data adult --dirs local  # starting from the encoder output of the trained LAFTR model, train a naive classifier for 10 epochs

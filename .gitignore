@@ -1,0 +1,7 @@
+.idea/*
+experiments/*
+tfboard_logs/*
+plots/*
+*.DS_Store
+*.swp
+
